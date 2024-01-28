@@ -1,16 +1,21 @@
 package com.example.s26408_bank.services;
 
-import com.example.s26408_bank.exceptions.InvalidPeselException;
 import com.example.s26408_bank.models.Account;
 import com.example.s26408_bank.models.Waluta;
+import com.example.s26408_bank.repository.AccountRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class AccountServiceTests {
 
-    @Autowired
+    @Mock
+    AccountRepository accountRepository;
+
+    @InjectMocks
     AccountService accountService;
 
     @Test
