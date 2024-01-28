@@ -3,6 +3,8 @@ package com.example.s26408_bank.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +20,7 @@ public class Account {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @JsonProperty(required = true)
