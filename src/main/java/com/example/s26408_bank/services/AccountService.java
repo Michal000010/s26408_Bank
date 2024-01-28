@@ -28,4 +28,8 @@ public class AccountService {
     public List<Account> getAccountsBySaldoIsGreaterThan(Double saldo) {
         return accountRepository.getAccountsBySaldoIsGreaterThan(saldo);
     }
+
+    public List<Account> getAccounts() {
+        return accountRepository.findAll();
+    }
 }

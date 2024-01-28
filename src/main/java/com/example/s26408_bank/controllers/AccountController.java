@@ -15,6 +15,11 @@ public class AccountController {
 
     private final AccountService accountService;
 
+    @GetMapping(value = "/all")
+    public ResponseEntity<List<Account>> getAllAccount() {
+        return ResponseEntity.ok(accountService.getAccounts());
+    }
+
     @GetMapping(value = "/{accountId}")
     public ResponseEntity<Account> getAccount(@PathVariable long accountId) {
         return ResponseEntity.ok(accountService.getAccount(accountId));
