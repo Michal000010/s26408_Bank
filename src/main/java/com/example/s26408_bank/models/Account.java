@@ -1,6 +1,8 @@
 package com.example.s26408_bank.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +12,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
 public class Account {
 
     @JsonProperty(required = true)
+    @Id
     private long id;
 
     @JsonProperty(required = true)
