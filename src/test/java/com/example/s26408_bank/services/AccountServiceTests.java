@@ -20,6 +20,11 @@ class AccountServiceTests {
 
     @Test
     void tryRegisterAccountWithWrongPesel() {
+        accountService.registerAccount(Account.builder().pesel("999999999999").name("XYZ").surname("ZZZ").saldo(10.0).waluta(Waluta.EUR).build());
+    }
+
+    @Test
+    void tryRegisterAccoun() {
         accountService.registerAccount(Account.builder().pesel("99999999999").name("XYZ").surname("ZZZ").saldo(10.0).waluta(Waluta.EUR).build());
     }
 }
