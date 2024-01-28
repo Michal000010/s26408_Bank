@@ -1,5 +1,6 @@
 package com.example.s26408_bank.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Account {
 
-    @JsonProperty(required = true)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @Id
     private long id;
 
